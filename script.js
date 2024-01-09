@@ -13,6 +13,7 @@ function getComputerChoice() {
             break;
     }
 
+    console.log("Computer: " + computerChoice);
     return computerChoice;
 }
 
@@ -21,8 +22,6 @@ let playerScore = 0;
 let computerScore = 0;
 
 function startRound(playerSelection, computerSelection) {
-    playerSelection.toLowerCase();
-    console.log("Computer: " + getComputerChoice());
 
     if (playerSelection == "rock" && computerSelection == "Rock") {
         console.log("It's a tie! Play again.")
@@ -54,17 +53,18 @@ function startRound(playerSelection, computerSelection) {
 }
 
 function game() {    
-    let playerAnswer = prompt("Choose your weapon!");
-    playerAnswer.toLowerCase();
+    while (playerScore < 5 && computerScore < 5) {
+        let playerAnswer = prompt("Choose your weapon!").toLowerCase();
+        console.log("Player: " + playerAnswer);
+        startRound(playerAnswer, getComputerChoice());
+    }
 
     if (playerScore == 5) {
-        return "Congrats! You won.";
+        console.log("Congrats! You won.");
     } else if (computerScore == 5) {
-        return "LOSER!";
-    } else if (playerScore < 5 && computerScore < 5) {
-        startRound(playerAnswer, getComputerChoice());
-        playerAnswer = prompt("Choose your weapon!");
-        startRound(playerAnswer, getComputerChoice());
+        console.log("LOSER!");
+    } else {
+        console.log("what");
     }
 }
 
