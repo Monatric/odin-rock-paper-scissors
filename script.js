@@ -16,44 +16,57 @@ function getComputerChoice() {
     return computerChoice;
 }
 
+
+let playerScore = 0;
+let computerScore = 0;
+
 function startRound(playerSelection, computerSelection) {
     playerSelection.toLowerCase();
 
-    let playerScore;
-    let computerScore;
-
     if (playerSelection == "rock" && computerSelection == "Rock") {
-        return "It's a tie! Play again.";
+        console.log("It's a tie! Play again.")
     } else if (playerSelection == "rock" && computerSelection == "Paper") {
         computerScore++;
-        return "You Lose! Rock is beaten by Paper";
+        console.log("You Lose! Rock is beaten by Paper");
     } else if (playerSelection == "rock" && computerSelection == "Scissors") {
         playerScore++;
-        return "You Win! Rock beats Scissors";
+        console.log("You Win! Rock beats Scissors");
     } else if (playerSelection == "paper" && computerSelection == "Rock") {
         playerScore++;
-        return "You Win! Paper beats Rock";
+        console.log("You Win! Paper beats Rock");
     } else if (playerSelection == "paper" && computerSelection == "Paper") {
-        return "It's a tie! Play again.";
+        console.log("It's a tie! Play again.")
     } else if (playerSelection == "paper" && computerSelection == "Scissors") {
         computerScore++;
-        return "You Lose! Paper is beaten by Scissors";
+        console.log("You Lose! Paper is beaten by Scissors");
     } else if (playerSelection == "scissors" && computerSelection == "Rock") {
         computerScore++;
-        return "You Lose! Scissors is beaten by Rock";
+        console.log("You Lose! Scissors is beaten by Rock");
     } else if (playerSelection == "scissors" && computerSelection == "Paper") {
         playerScore++;
-        return "You Win! Scissors beats Paper";
+        console.log("You Win! Scissors beats Paper");
     } else if (playerSelection == "scissors" && computerSelection == "Scissors") {
-        return "It's a tie! Play again.";
+        console.log("It's a tie! Play again.");
     }
 
-    console.log("[Total score] Player: " + playerScore + "| Computer: " + computerScore);
+    console.log("[Total score] Player: " + playerScore + " | Computer: " + computerScore);
 }
-
-
 
 function game() {    
     let playerAnswer = prompt("Choose your weapon!");
+    playerAnswer.toLowerCase();
 
+    if (playerScore == 5) {
+        return "Congrats! You won.";
+    } else if (computerScore == 5) {
+        return "LOSER!";
+    } else {
+        startRound(playerAnswer, getComputerChoice());
+        startRound(playerAnswer, getComputerChoice());
+        startRound(playerAnswer, getComputerChoice());
+        startRound(playerAnswer, getComputerChoice());
+        startRound(playerAnswer, getComputerChoice());
+    }
 }
+
+game();
