@@ -108,6 +108,7 @@ function startRound(playerSelection, computerSelection) {
         playerScoreDiv.textContent = '0';
         compScoreDiv.textContent = '0';
         dialogue.textContent = '';
+        compSelection.textContent = '';
 
         rpsBtns.addEventListener('click', rpsEvent);
         document.body.removeChild(resetBtn);
