@@ -99,6 +99,7 @@ function startRound(playerSelection, computerSelection) {
         dialogue.textContent = '';
         const compSelection = document.querySelector('.comp-selection');
         compSelection.textContent = '';
+        results.textContent = '';
 
         rpsBtns.addEventListener('click', rpsEvent);
         document.body.removeChild(resetBtn);
