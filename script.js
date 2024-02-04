@@ -16,7 +16,6 @@ function getComputerChoice() {
     const compSelection = document.querySelector('.comp-selection');
     compSelection.textContent = 'Computer: ' + computerChoice;
 
-    // console.log("Computer: " + computerChoice);
     return computerChoice;
 }
 
@@ -48,37 +47,28 @@ function startRound(playerSelection, computerSelection) {
 
     if (playerSelection == "rock" && computerSelection == "Rock") {
         dialogue.textContent = "It's a tie! Play again.";
-        // console.log("It's a tie! Play again.")
     } else if (playerSelection == "rock" && computerSelection == "Paper") {
         computerScore++;
         dialogue.textContent = "You Lose! Rock is beaten by Paper";
-        //console.log("You Lose! Rock is beaten by Paper");
     } else if (playerSelection == "rock" && computerSelection == "Scissors") {
         playerScore++;
         dialogue.textContent = "You Win! Rock beats Scissors";
-        //console.log("You Win! Rock beats Scissors");
     } else if (playerSelection == "paper" && computerSelection == "Rock") {
         playerScore++;
         dialogue.textContent = "You Win! Paper beats Rock";
-        //console.log("You Win! Paper beats Rock");
     } else if (playerSelection == "paper" && computerSelection == "Paper") {
         dialogue.textContent = "It's a tie! Play again.";
-        //console.log("It's a tie! Play again.")
     } else if (playerSelection == "paper" && computerSelection == "Scissors") {
         computerScore++;
         dialogue.textContent = "You Lose! Paper is beaten by Scissors";
-        //console.log("You Lose! Paper is beaten by Scissors");
     } else if (playerSelection == "scissors" && computerSelection == "Rock") {
         computerScore++;
         dialogue.textContent = "You Lose! Scissors is beaten by Rock";
-        //console.log("You Lose! Scissors is beaten by Rock");
     } else if (playerSelection == "scissors" && computerSelection == "Paper") {
         playerScore++;
         dialogue.textContent = "You Win! Scissors beats Paper";
-        //console.log("You Win! Scissors beats Paper");
     } else if (playerSelection == "scissors" && computerSelection == "Scissors") {
         dialogue.textContent = "It's a tie! Play again.";
-        //console.log("It's a tie! Play again.");
     }
 
     const playerScoreDiv = document.querySelector('.player-score');
@@ -86,7 +76,6 @@ function startRound(playerSelection, computerSelection) {
     playerScoreDiv.textContent = playerScore;
     compScoreDiv.textContent = computerScore;
 
-    //console.log("[Total score] Player: " + playerScore + " | Computer: " + computerScore);
     const results = document.querySelector('.results');
     const resetBtn = document.createElement('button');
     resetBtn.textContent = 'Play Again';
@@ -115,25 +104,3 @@ function startRound(playerSelection, computerSelection) {
         document.body.removeChild(resetBtn);
     })
 }
-
-
-
-
-
-// function game() {    
-//     while (playerScore < 5 && computerScore < 5) {
-//         let playerAnswer = prompt("Choose your weapon!").toLowerCase();
-//         console.log("Player: " + playerAnswer);
-//         startRound(playerAnswer, getComputerChoice());
-//     }
-
-//     if (playerScore == 5) {
-//         console.log("Congrats! You won.");
-//     } else if (computerScore == 5) {
-//         console.log("LOSER!");
-//     } else {
-//         console.log("what");
-//     }
-// }
-
-// game();
