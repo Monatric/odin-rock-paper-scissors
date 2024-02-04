@@ -108,6 +108,7 @@ function startRound(playerSelection, computerSelection) {
         playerScoreDiv.textContent = '0';
         compScoreDiv.textContent = '0';
         dialogue.textContent = '';
+        const compSelection = document.querySelector('.comp-selection');
         compSelection.textContent = '';
 
         rpsBtns.addEventListener('click', rpsEvent);
